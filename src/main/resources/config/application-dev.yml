@@ -1,11 +1,11 @@
 # 开启swagger，SwaggerConfig 配置
-swagger:
-  enable: true
+# swagger:
+#   enable: true
 
 logging:
     level:
         ROOT: info 
-        cc.wanforme.cmcore: info
+        cc.wanforme.nukkit: info
 
 # 数据源, alibaba druid连接池
 spring:
@@ -13,8 +13,8 @@ spring:
     proxy-target-class: true    auto: true  datasource:#    type: com.alibaba.druid.pool.DruidDataSource
     druid:
         # druid 通用配置， 也可以在各个数据源中单独配置
-       max-active: 20  # 最大数量
-       initial-size: 2 # 初始化数量
+       max-active: 8  # 最大数量
+       initial-size: 1 # 初始化数量
        max-wait: 60000 # 获取连接超时等待时间
        min-idle: 1 # 最小闲置数量
        time-between-eviction-runs-millis: 60000 # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 
@@ -34,7 +34,7 @@ spring:
 
        # 主数据源 详见 DatabaseConfiguration类
        default:
-          # mysql驱动高版本报 时区不识别的错时，一定给加上末尾的参数 serverTimezone=UTC(世界同一时间) 或 serverTimezone=GMT%2B8(东8区)
+          # mysql驱动高版本报 时区不识别的错时，一定给加上末尾的参数 serverTimezone=UTC(世界统一时间) 或 serverTimezone=GMT%2B8(东8区)
           # 低版本驱动不存在时区问题
           url: jdbc:mysql://localhost:3306/CelesteSquirrel?useUnicode=true&characterEncoding=UTF-8&atuoReconnect=true&serverTimezone=GMT%2B8
           username: root
@@ -83,4 +83,13 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true # 下划线转驼峰命名
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # sql日志输出
+
+nukkit:  spring:
+    # 启用 nukkit 相关模块    enable: true
+    # 是否一同启动 nukkit
+    start-nukkit: true
+    # 使用 spring 编写的 nukkit 插件位置
+    nukkit-spring-plugin-location: nsplugins
+
+
 
