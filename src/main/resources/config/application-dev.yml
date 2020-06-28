@@ -1,0 +1,86 @@
+# 开启swagger，SwaggerConfig 配置
+swagger:
+  enable: true
+
+logging:
+    level:
+        ROOT: info 
+        cc.wanforme.cmcore: info
+
+# 数据源, alibaba druid连接池
+spring:
+  aop:
+    proxy-target-class: true    auto: true  datasource:#    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+        # druid 通用配置， 也可以在各个数据源中单独配置
+       max-active: 20  # 最大数量
+       initial-size: 2 # 初始化数量
+       max-wait: 60000 # 获取连接超时等待时间
+       min-idle: 1 # 最小闲置数量
+       time-between-eviction-runs-millis: 60000 # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 
+       min-evictable-idle-time-millis: 300000  # 配置一个连接在池中最小生存的时间，单位是毫秒 
+       validation-query: SELECT 1 FROM DUAL
+       test-while-idle: true
+       test-on-borrow: false
+       test-on-return: false
+       # 打开PSCache，并且指定每个连接上PSCache的大小 
+       pool-prepared-statements: true
+       # max-open-prepared-statements: 20
+       max-pool-prepared-statement-per-connection-size: 20
+       # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙  
+       filters: stat,wall,log4j
+       # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+       connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+       # 主数据源 详见 DatabaseConfiguration类
+       default:
+          # mysql驱动高版本报 时区不识别的错时，一定给加上末尾的参数 serverTimezone=UTC(世界同一时间) 或 serverTimezone=GMT%2B8(东8区)
+          # 低版本驱动不存在时区问题
+          url: jdbc:mysql://localhost:3306/CelesteSquirrel?useUnicode=true&characterEncoding=UTF-8&atuoReconnect=true&serverTimezone=GMT%2B8
+          username: root
+          password: wansmmecc
+          driver-class-name: com.mysql.jdbc.Driver
+# redis 单数据源配置
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password: 
+    timeout: 10000 # 连接超时时间
+    jedis:      pool:        max-active: 8 # 最大连接数
+        max-wait: -1 # 最大等待时间  （-1，没有限制）
+        max-idle: 8 # 最大闲置数量
+        min-idle: 0 # 最小空闲数量
+  
+# redis多数据源配置
+#  redis:
+    # redis 通用配置#    lettuce:
+#        pool:#          max-active: 3000 # 最大分配对象
+#          max-wait: 1500 # 获取连接最大等待时间#          max-idle: 3000 # 最大闲置数量
+#          min-idle: 0 # 最小闲置数量 
+#          time-between-eviction-runs: #
+#    host: 127.0.0.1
+#    port: 6379
+#    password: pass    # 数据库 0 (redis)
+#    database: 0
+#    host: 127.0.0.1
+#    port: 6379
+#    password: pass
+#    timeout: 3000
+    # 数据库 1 (reids1)
+#  redis1:
+#    database: 1
+#    host: 127.0.0.1
+#    port: 6379
+#    password: pass#    timeout: 3000
+
+
+
+mybatis-plus:
+  # 只能填一个，因为和 DatabaseConfiguration 中的 SqlSessionFactory 有关
+  mapper-locations: classpath:/mapper/**/*Mapper.xml
+  type-aliases-package: cc.wanforme.cmcore.base.po
+  configuration:
+    map-underscore-to-camel-case: true # 下划线转驼峰命名
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # sql日志输出
+
