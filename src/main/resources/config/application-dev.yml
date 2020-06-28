@@ -12,4 +12,9 @@ nukkit:  spring:
     # 使用 spring 编写的 nukkit 插件位置
     # plugins' location written with spring
     nukkit-spring-plugin-location: nsplugins
+    # 监听 nukkit 启动的间隔（ms）
+    listenTick: 500
+    # 监听 nukkit 启动的超时时间（ms）
+    listenTimeOut: 10000
+    
 

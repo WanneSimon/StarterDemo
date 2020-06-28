@@ -7,4 +7,5 @@
   2. （非常重要）pom 文件，需要特别注意与项目相关的地方。顶部 - groupId、artifactId，底部 - mainClass 。
   3. （可选）启动类继承 NukkitApplicationLauncher 类。
   4. （不重要）日志的使用，可以参考主类 StarterDemo 类的用法。
+  5. （重要）非常不推荐在 nukkit 启动完成前获取 nukkit 内部的对象
   
