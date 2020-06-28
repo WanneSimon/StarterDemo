@@ -1,15 +1,15 @@
 server:
   port: 8050 #web端口
   servlet:
-    context-path: /sd
-    application-display-name: StartDemo
+    context-path: /nk
+    application-display-name: StarterDemo
   shutdown: graceful # 优雅关机(勿强制杀死进程)
 
 spring:
   profiles:
     active: dev
   application:
-    name: StartDemo
+    name: StarterDemo
 #  cloud:
 #    config:
 #      enabled: false
