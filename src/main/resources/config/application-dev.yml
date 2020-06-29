@@ -16,5 +16,8 @@ nukkit:  spring:
     listenTick: 500
     # 监听 nukkit 启动的超时时间（ms）
     listenTimeOut: 10000
-    
-
+    # 需要在 nukkit 启动前保存到外部的文件夹,(如果已存在，会覆盖)
+    # 默认 plugins 文件夹，并且starter会单独保存'plugins/PMPlus.jar',
+    # (如果你的项目中也有一个 'plugins/PMPlus.jar', 则会覆盖 starter 中的 PMPlus.jar)
+    savingFoldersBeforeNukkit: plugins, config
+    # savingFoldersBeforeNukkit: plugins,players,worlds
