@@ -45,5 +45,6 @@ server.properties
 white-list.txt
 
 
-
+# others
+config/
 
