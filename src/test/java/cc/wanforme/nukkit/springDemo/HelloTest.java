@@ -1,4 +1,4 @@
-package cc.wanforme.nukkit;
+package cc.wanforme.nukkit.springDemo;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;

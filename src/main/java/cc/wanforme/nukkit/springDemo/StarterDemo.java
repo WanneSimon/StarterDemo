@@ -1,10 +1,11 @@
-package cc.wanforme.nukkit;
+package cc.wanforme.nukkit.springDemo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import cc.wanforme.nukkit.spring.NukkitApplicationLauncher;
+
 
 @SpringBootApplication
 public class StarterDemo extends NukkitApplicationLauncher{

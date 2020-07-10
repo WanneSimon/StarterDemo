@@ -57,7 +57,7 @@
 				<configuration>
 					<fork>true</fork> <!-- live load. 热部署[2] -->
 					<!-- Main Class. 指定主方法 -->
-					<mainClass>cc.wanforme.nukkit.StarterDemo</mainClass>
+					<mainClass>cc.wanforme.nukkit.springDemo.StarterDemo</mainClass>
 				</configuration>
 				<executions>
 					<execution>
