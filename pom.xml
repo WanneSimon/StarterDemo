@@ -15,6 +15,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring-boot-starter-test.version>2.3.1.RELEASE</spring-boot-starter-test.version>
 		<spring-boot-devtools.version>2.3.1.RELEASE</spring-boot-devtools.version>
+		<nukkit.version>2.0.0-SNAPSHOT</nukkit.version>
 	</properties>
 
 	<dependencies>
@@ -23,7 +24,13 @@
 			<artifactId>wannukkit-springboot-starter</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
-		
+		<!-- 
+		<dependency>
+			<groupId>cn.nukkit</groupId>
+			<artifactId>nukkit</artifactId>
+			<version>${nukkit.version}</version>
+		</dependency>
+		 -->
 	</dependencies>
 
 	<build>
