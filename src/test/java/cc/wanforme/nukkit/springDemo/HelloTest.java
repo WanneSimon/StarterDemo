@@ -18,9 +18,9 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
  * @author wanne
  * 2020年6月28日
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@AutoConfigureMockMvc
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
+//@AutoConfigureMockMvc
 public class HelloTest {
 	
     @Autowired
