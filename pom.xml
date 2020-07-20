@@ -63,12 +63,14 @@
 					<!-- Main Class. 指定主方法 -->
 					<mainClass>cc.wanforme.nukkit.springDemo.StarterDemo</mainClass>
 					<!-- 剔除 nukkit -->
+					<!-- 
 					<excludes>
 						<exclude>
 							<groupId>cn.nukkit</groupId>
 							<artifactId>nukkit</artifactId>
 						</exclude>
 					</excludes>
+					 -->
 					<executable>true</executable>
 				</configuration>
 				<executions>
