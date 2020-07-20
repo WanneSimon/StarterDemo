@@ -24,16 +24,10 @@
 			<artifactId>wannukkit-springboot-starter</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
-		
-		<!-- 
-		<dependency>
-			<groupId>cn.nukkit</groupId>
-			<artifactId>nukkit</artifactId>
-			<version>${nukkit.version}</version>
-			<scope>provided</scope> 
-			<optional>true</optional>
-		</dependency>
-		 -->
+
+		<!-- <dependency> <groupId>cn.nukkit</groupId> <artifactId>nukkit</artifactId> 
+			<version>${nukkit.version}</version> <scope>provided</scope> <optional>true</optional> 
+			</dependency> -->
 	</dependencies>
 
 	<build>
@@ -54,23 +48,28 @@
 				<directory>${project.basedir}/src/test/resources</directory>
 			</testResource>
 		</testResources>
-		
-		<!-- 
-		<outputDirectory>${project.basedir}/nukkit</outputDirectory>
-		<testOutputDirectory>${project.basedir}/nukkitTest</testOutputDirectory>
- 		-->
- 
+
+		<!-- <outputDirectory>${project.basedir}/nukkit</outputDirectory> <testOutputDirectory>${project.basedir}/nukkitTest</testOutputDirectory> -->
+
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<!-- 跳过 BOOT-INF 文件夹 -->
-					<!--<skip>true</skip>-->
+					<!--<skip>true</skip> -->
 					<!-- live load. 热部署[2] -->
-					<fork>true</fork>
+					<!-- <fork>true</fork> -->
 					<!-- Main Class. 指定主方法 -->
 					<mainClass>cc.wanforme.nukkit.springDemo.StarterDemo</mainClass>
+					<!-- 剔除 nukkit -->
+					<excludes>
+						<exclude>
+							<groupId>cn.nukkit</groupId>
+							<artifactId>nukkit</artifactId>
+						</exclude>
+					</excludes>
+					<executable>true</executable>
 				</configuration>
 				<executions>
 					<execution>
@@ -79,7 +78,29 @@
 						</goals>
 					</execution>
 				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.springframework.boot.experimental</groupId>
+						<artifactId>spring-boot-thin-layout</artifactId>
+						<version>1.0.25.RELEASE</version>
+					</dependency>
+				</dependencies>
 			</plugin>
+			<plugin>
+                <groupId>org.springframework.boot.experimental</groupId>
+                <artifactId>spring-boot-thin-maven-plugin</artifactId>
+                <version>1.0.25.RELEASE</version>
+                <executions>
+                    <execution>
+                        <!--在编译时下载依赖包 -->
+                        <id>resolve</id>
+                        <goals>
+                            <goal>resolve</goal>
+                        </goals>
+                        <inherited>false</inherited>
+                    </execution>
+                </executions>
+            </plugin>
 		</plugins>
 	</build>
 </project>
