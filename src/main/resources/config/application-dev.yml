@@ -3,9 +3,11 @@ logging:
         ROOT: info 
         cc.wanforme.nukkit: info
         
-nukkit:  spring:
+nukkit:
+   spring:
     # 启用 nukkit 相关模块
-    # enable nukkit module    enable: true
+    # enable nukkit module
+    enable: true
     # 是否一同启动 nukkit
     # run nukkit after launch app
     start-nukkit: true
