@@ -13,7 +13,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<wannukkit-springboot-starter.version>1.0.0-SNAPSHOT</wannukkit-springboot-starter.version>
+		<wannukkit-spring-boot-starter.version>1.0.0-SNAPSHOT</wannukkit-spring-boot-starter.version>
 		<spring-boot-thin-layout.version>1.0.25.RELEASE</spring-boot-thin-layout.version>
 		<spring-boot-thin-maven-plugin.version>1.0.25.RELEASE</spring-boot-thin-maven-plugin.version>
 	</properties>
@@ -21,8 +21,8 @@
 	<dependencies>
 		<dependency>
 			<groupId>cc.wanforme.nukkit</groupId>
-			<artifactId>wannukkit-springboot-starter</artifactId>
-			<version>${wannukkit-springboot-starter.version}</version>
+			<artifactId>wannukkit-spring-boot-starter</artifactId>
+			<version>${wannukkit-spring-boot-starter.version}</version>
 		</dependency>
 	</dependencies>
 
