@@ -11,6 +11,29 @@
 	<name>StarterDemo</name>
 	<url>http://maven.apache.org</url>
 
+    <repositories>
+        <repository>
+            <id>wannukit-repo-release</id>
+            <url>http://www.repo.wanforme.cc/repository/maven-releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>wannukit-repo-snapshot</id>
+            <url>http://www.repo.wanforme.cc/repository/maven-snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<wannukkit-spring-boot-starter.version>1.0.0-SNAPSHOT</wannukkit-spring-boot-starter.version>
